@@ -185,5 +185,6 @@ class TestAccountService(TestCase):
 
     def test_cors_security(self):
         response = self.client.get('/', environ_overrides=HTTPS_ENVIRON)
+
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(response.headers.get('Access-Control-Allow-Origin'), '*')
